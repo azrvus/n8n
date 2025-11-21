@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: azrv
+    env: docker
+    plan: free
+    buildCommand: ""
+    startCommand: "n8n"
+    autoDeploy: true
+    ports:
+      - port: 5678
+        protocol: http
+    envVars:
+      - key: N8N_HOST
+        value: azrv.onrender.com
+      - key: N8N_PROTOCOL
+        value: https
+      - key: N8N_PORT
+        value: 5678
